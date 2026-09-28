@@ -1,4 +1,4 @@
-const CACHE = 'lexilab-mobile-v1';
+const CACHE = 'lexilab-mobile-v2';
 const SHELL = ['./','./index.html','./styles.css','./app.js','./logic.js','./db.js','./words.js','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install', event => { event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', event => { event.waitUntil(Promise.all([caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))), self.clients.claim()])); });

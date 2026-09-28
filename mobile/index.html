@@ -25,7 +25,8 @@
         <p class="result-count" id="resultCount"></p><div id="dictionaryList" class="list"></div>
         <div class="import-panel"><h2>Большой словарь</h2><p>Можно добавить до 62 тысяч словарных статей из открытого англо-русского словаря FreeDict. Скачайте TEI-файл и выберите его ниже. После импорта слова останутся на этом устройстве и будут доступны без сети.</p>
           <a class="source-link" href="https://download.freedict.org/generated/eng-rus/eng-rus.tei" target="_blank" rel="noopener noreferrer">Скачать словарь FreeDict ↗</a>
-          <label class="file-label" for="dictionaryFile">Выбрать файл .tei или .xml</label><input id="dictionaryFile" type="file" accept=".tei,.xml,text/xml,application/xml,application/tei+xml">
+          <p class="file-help">На iPhone: сохраните eng-rus.tei в «Файлы» → «Загрузки». Затем нажмите кнопку ниже и выберите «Обзор» → «Загрузки». Если файл оказался в iCloud Drive, откройте эту папку.</p>
+          <label class="file-label" for="dictionaryFile">Выберите скачанный файл словаря</label><input id="dictionaryFile" type="file" aria-label="Выбрать файл словаря">
           <p id="importStatus" class="status" role="status"></p><p class="credit">Словарь FreeDict, лицензия CC BY-SA 3.0. При импорте словарные данные обрабатываются на вашем устройстве.</p>
         </div>
       </section>
