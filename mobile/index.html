@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#6755db"><meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>LexiLab — слова каждый день</title>
+  <link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header"><div class="logo">L<span>·</span></div><div><strong>LexiLab</strong><small>языки × алгоритмы</small></div><button id="installBtn" class="install" hidden>Установить</button></header>
+    <main>
+      <section id="studyView" class="view active" aria-labelledby="studyTitle">
+        <div class="hero"><p class="eyebrow">МАЛЕНЬКИЙ ШАГ КАЖДЫЙ ДЕНЬ</p><h1 id="studyTitle">Слова, которые<br><em>остаются с вами.</em></h1><p>Короткая тренировка сегодня — уверенная речь завтра.</p></div>
+        <div class="stats"><div><span>Изучаю</span><strong id="activeCount">0</strong></div><div><span>Сегодня</span><strong id="dueCount">0</strong></div><div><span>Повторено</span><strong id="reviewCount">0</strong></div></div>
+        <div class="section-title"><div><p class="eyebrow">ПРАКТИКА</p><h2>Время повторить</h2></div><span id="queueLabel" class="badge"></span></div>
+        <div id="cardArea" aria-live="polite"></div>
+        <div class="tip">Нажмите на карточку, чтобы увидеть перевод. Ошибки — часть обучения.</div>
+      </section>
+      <section id="dictionaryView" class="view" aria-labelledby="dictTitle">
+        <div class="page-head"><p class="eyebrow">ИССЛЕДУЙТЕ ЯЗЫК</p><h1 id="dictTitle">Словарь</h1><p>Найдите слово и добавьте его в свою тренировку.</p></div>
+        <div class="search-wrap"><label class="sr" for="searchInput">Поиск по слову или переводу</label><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Поиск: word или перевод" autocomplete="off"></div>
+        <p class="result-count" id="resultCount"></p><div id="dictionaryList" class="list"></div>
+        <div class="import-panel"><h2>Большой словарь</h2><p>Можно добавить до 62 тысяч словарных статей из открытого англо-русского словаря FreeDict. Скачайте TEI-файл и выберите его ниже. После импорта слова останутся на этом устройстве и будут доступны без сети.</p>
+          <a class="source-link" href="https://download.freedict.org/generated/eng-rus/eng-rus.tei" target="_blank" rel="noopener noreferrer">Скачать словарь FreeDict ↗</a>
+          <label class="file-label" for="dictionaryFile">Выбрать файл .tei или .xml</label><input id="dictionaryFile" type="file" accept=".tei,.xml,text/xml,application/xml,application/tei+xml">
+          <p id="importStatus" class="status" role="status"></p><p class="credit">Словарь FreeDict, лицензия CC BY-SA 3.0. При импорте словарные данные обрабатываются на вашем устройстве.</p>
+        </div>
+      </section>
+      <section id="mineView" class="view" aria-labelledby="mineTitle"><div class="page-head"><p class="eyebrow">ЛИЧНАЯ КОЛЛЕКЦИЯ</p><h1 id="mineTitle">Мои слова</h1><p>Добавляйте выражения, которые встретились именно вам.</p></div>
+        <form id="addForm" class="add-form"><label for="wordInput">Английское слово</label><input id="wordInput" maxlength="80" required placeholder="например, serendipity"><label for="translationInput">Перевод</label><input id="translationInput" maxlength="160" required placeholder="счастливая случайность"><button class="primary" type="submit">Добавить слово</button><p id="addStatus" class="status" role="status"></p></form>
+        <h2 class="my-title">В изучении <span id="mineCount"></span></h2><div id="mineList" class="list"></div>
+        <div class="footnote">Прогресс хранится только в этом браузере. Очистка данных сайта удалит его.</div>
+      </section>
+    </main>
+    <nav class="tabbar" aria-label="Разделы"><button data-view="study" class="selected"><span>◈</span>Учить</button><button data-view="dictionary"><span>⌕</span>Словарь</button><button data-view="mine"><span>▤</span>Мои слова</button></nav>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
